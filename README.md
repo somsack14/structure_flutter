@@ -3,10 +3,9 @@
 A new Flutter project.
 
 ## Getting Started
-
+<img src="https://user-images.githubusercontent.com/64205648/183563550-7e5c6bd9-d440-43be-b6ce-89d52f7d4edd.png" alt="drawing" width="200"/>
 This project is a starting point for a Flutter application.
 
-![Simulator Screen Shot - iPhone 13 Pro Max - 2022-08-09 at 11 20 37](https://user-images.githubusercontent.com/64205648/183563550-7e5c6bd9-d440-43be-b6ce-89d52f7d4edd.png)
 
 A few resources to get you started if this is your first Flutter project:
 
