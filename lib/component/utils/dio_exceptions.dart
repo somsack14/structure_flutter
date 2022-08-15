@@ -1,14 +1,14 @@
 // import 'package:dio/dio.dart';
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
-// import '../cores.dart';
+// import 'package:structure_flutter/component/constants/strings.dart';
 // class DioExceptions implements Exception {
 //   DioExceptions.fromDioError(DioError dioError) {
 //     print("dioError${dioError.type}");
-//
+
 //     switch (dioError.type) {
 //       case DioErrorType.cancel:
-//         message = Strings.msgDioErrorTypeCANCEL.tr;
+//         message = "Strings.msgDioErrorTypeCANCEL.tr";
 //         break;
 //       case DioErrorType.connectTimeout:
 //         message = Strings.msgDioErrorTypeCONNECT_TIMEOUT.tr;

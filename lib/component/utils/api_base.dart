@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-const String kBaseURL = 'https://www.mydomain.com'; // your domains
-
+const String kBaseURL = 'https://newsapi.org'; // your domains
 
 const int kConnectTimeout = 50000;
 const int kReceiveTimeout = 60000;
