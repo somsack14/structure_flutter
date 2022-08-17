@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
+import 'package:structure_flutter/component/models/appmodels.dart';
+import 'package:structure_flutter/component/models/newsmodel.dart';
 import 'package:structure_flutter/component/providers/auth_providers.dart';
 import 'package:structure_flutter/component/serviecs/auth_serviecs/auth_services.dart';
 
@@ -12,7 +14,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  @override
   bool isLoading = false;
   String phone = "0205223232";
   String otp = "55223";
@@ -40,6 +41,7 @@ class _LoginPageState extends State<LoginPage> {
     });
   }
 
+  @override
   void initState() {
     actionDataLogin();
     super.initState();
@@ -48,13 +50,20 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     AuthProviders authData = Provider.of<AuthProviders>(context, listen: false);
-    return ModalProgressHUD(
-      inAsyncCall: isLoading,
-      // progressIndicator: ProgressIndicator(),
-      child: Scaffold(
-        appBar: AppBar(),
-        body: Container(
-          child: Text(authData.getNewsmodel!.articles!.length.toString()),
+    return Provider(
+      create: (_) {
+        Newsmodel();
+      },
+      child: ModalProgressHUD(
+        inAsyncCall: isLoading,
+        // progressIndicator: ProgressIndicator(),
+        child: Scaffold(
+          appBar: AppBar(),
+          body: Column(
+            children: [
+              Text(authData.getNewsmodel!.articles!.length.toString()),
+            ],
+          ),
         ),
       ),
     );

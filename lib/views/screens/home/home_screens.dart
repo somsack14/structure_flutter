@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:structure_flutter/component/constants/colors.dart';
 import 'package:structure_flutter/views/modules/nft_bored_ape/screens/home_nft_bored_ape.dart';
+
+import '../../../component/models/appmodels.dart';
 
 class HomeScreens extends StatefulWidget {
   const HomeScreens({Key? key}) : super(key: key);
@@ -22,107 +25,116 @@ class _HomeScreensState extends State<HomeScreens> {
   ];
   String descriptions =
       "What's a third-party application? A third-party app is a software application made by someone other than the manufacturer of a mobile device or its operating system. For instance, app development companies or individual developers create a lot of applications for Apple's or Google's operating systems.";
+
+  @override
+  void initState() {
+    setState(() {});
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blueGrey.shade50,
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          const Text(
-            "All Modules Applications",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
+    return Consumer<AppModel>(
+      builder: (BuildContext context, appModel, Widget? child) => Container(
+        color: Colors.blueGrey.shade50,
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 10,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              " $descriptions ",
-              textAlign: TextAlign.center,
+            Text(
+              appModel.text1,
               style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.normal,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: listMenu.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => listMenu[index]["navigation"],
-                        ),
-                      );
-
-                    },
-                    child: PhysicalModel(
-                      elevation: 2.0,
-                      shadowColor: kSecondaryColor.shade200,
-                      color: Colors.white,
-                      clipBehavior: Clip.antiAlias,
-                      borderRadius: BorderRadius.circular(20),
-                      child: SizedBox(
-                        height: 320,
-                        width: double.infinity,
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              listMenu[index]["imagePath"],
-                              height: 200,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                            ),
-                            const Spacer(),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  listMenu[index]["title"],
-                                  textAlign: TextAlign.left,
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                " $descriptions ",
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: listMenu.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) =>
+                                listMenu[index]["navigation"],
+                          ),
+                        );
+                      },
+                      child: PhysicalModel(
+                        elevation: 2.0,
+                        shadowColor: kSecondaryColor.shade200,
+                        color: Colors.white,
+                        clipBehavior: Clip.antiAlias,
+                        borderRadius: BorderRadius.circular(20),
+                        child: SizedBox(
+                          height: 320,
+                          width: double.infinity,
+                          child: Column(
+                            children: [
+                              Image.asset(
+                                listMenu[index]["imagePath"],
+                                height: 200,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
+                              ),
+                              const Spacer(),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                    listMenu[index]["title"],
+                                    textAlign: TextAlign.left,
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                "  ${listMenu[index]["descriptions"]} ",
-                                maxLines: 3,
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.left,
-                                style: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.normal,
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  "  ${listMenu[index]["descriptions"]} ",
+                                  maxLines: 3,
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.left,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                          ],
+                              const SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                );
-              },
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

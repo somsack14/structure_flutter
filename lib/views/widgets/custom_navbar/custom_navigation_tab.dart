@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:structure_flutter/component/constants/colors.dart';
+import 'package:structure_flutter/component/serviecs/auth_serviecs/login.dart';
+import 'package:structure_flutter/component/serviecs/auth_serviecs/sign_in.dart';
+import 'package:structure_flutter/views/screens/game.dart';
 import 'package:structure_flutter/views/screens/home/home_screens.dart';
 import 'package:structure_flutter/views/screens/news_screen/news_screen.dart';
+import 'package:structure_flutter/views/screens/sports_screen/sports_screen.dart';
 
 class CustomNavigationBar extends StatefulWidget {
   const CustomNavigationBar({Key? key}) : super(key: key);
@@ -18,13 +22,9 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
     final textTheme = theme.textTheme;
     final _kTabPages = <Widget>[
       const HomeScreens(),
-      Container(
-        color: Colors.blueGrey.shade50,
-      ),
+      const GameScreen(),
       const NewsScreen(),
-      Container(
-        color: Colors.blueGrey.shade50,
-      ),
+      const SportsScreen(),
       Container(
         color: Colors.blueGrey.shade50,
       ),
@@ -74,12 +74,41 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
             child: ListView(
               padding: EdgeInsets.zero,
               children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Text(
-                    "Header",
-                    style: textTheme.headline6,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return const SignIn();
+                        }));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(
+                          "Login",
+                          style: textTheme.headline6,
+                        ),
+                      ),
+                    ),
+                    const Text("/"),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (context) {
+                          return const SportsScreen();
+                        }));
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(
+                          "Register",
+                          style: textTheme.headline6,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const Divider(
                   height: 1,

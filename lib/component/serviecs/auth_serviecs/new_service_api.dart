@@ -20,11 +20,11 @@ class NewApiServices {
     } on DioError catch (e) {
       debugPrint(e.toString());
     }
-    return null;
+    return response.data;
   }
 
-  Future callDumyApi() async {
-    response = await _dio!.post(
+  Future callDummyApi() async {
+    response = await _dio!.get(
       _url,
       options: Options(contentType: Headers.jsonContentType, headers: {
         "Accept": "application/json",
