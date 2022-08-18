@@ -1,9 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:structure_flutter/component/models/newsmodel.dart';
-import 'package:structure_flutter/component/utils/api_base.dart';
 
-import '../../models/user.dart';
 import '../../models/user_info.dart';
 import 'logging.dart';
 
@@ -16,38 +14,39 @@ class DioClient {
     ),
   )..interceptors.add(Logging());
 
-  Future<User?> getData({required String id}) async {
-    User? user;
-
-    try {
-      Response userData = await _dio.get('/users/$id');
-
-      debugPrint('User Info: ${userData.data}');
-
-      user = User.fromJson(userData.data);
-    } on DioError catch (e) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx and is also not 304.
-      if (e.response != null) {
-        debugPrint('Dio error!');
-        debugPrint('STATUS: ${e.response?.statusCode}');
-        debugPrint('DATA: ${e.response?.data}');
-        debugPrint('HEADERS: ${e.response?.headers}');
-      } else {
-        // Error due to setting up or sending the request
-        debugPrint('Error sending request!');
-        debugPrint(e.message);
-      }
-    }
-
-    return user;
-  }
+  // Future<User?> getData({required String id}) async {
+  //   User? user;
+  //
+  //   try {
+  //     Response userData = await _dio.get('/users/$id');
+  //
+  //     debugPrint('User Info: ${userData.data}');
+  //
+  //     user = User.fromJson(userData.data);
+  //   } on DioError catch (e) {
+  //     // The request was made and the server responded with a status code
+  //     // that falls out of the range of 2xx and is also not 304.
+  //     if (e.response != null) {
+  //       debugPrint('Dio error!');
+  //       debugPrint('STATUS: ${e.response?.statusCode}');
+  //       debugPrint('DATA: ${e.response?.data}');
+  //       debugPrint('HEADERS: ${e.response?.headers}');
+  //     } else {
+  //       // Error due to setting up or sending the request
+  //       debugPrint('Error sending request!');
+  //       debugPrint(e.message);
+  //     }
+  //   }
+  //
+  //   return user;
+  // }
 
   Future<Newsmodel?> getNews() async {
     Newsmodel? news;
 
     try {
-      Response newsData = await _dio.get('/v2/top-headlines?sources=techcrunch&apiKey=156ab4e585e1461d861b156080f53581');
+      Response newsData = await _dio.get(
+          '/v2/top-headlines?sources=techcrunch&apiKey=156ab4e585e1461d861b156080f53581');
 
       debugPrint('News Info: ${newsData.data}');
 

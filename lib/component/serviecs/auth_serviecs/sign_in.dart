@@ -18,10 +18,10 @@ class _SignInState extends State<SignIn> {
         child: Form(
           child: Column(
             children: [
-              Text("Email"),
+              const Text("Email"),
               TextFormField(),
-              SizedBox(height: 20),
-              Text("Password"),
+              const SizedBox(height: 20),
+              const Text("Password"),
               TextFormField(),
             ],
           ),

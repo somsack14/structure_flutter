@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
-import 'package:sizer/sizer.dart';
 import 'package:structure_flutter/component/models/newsmodel.dart';
 import 'package:structure_flutter/component/serviecs/auth_serviecs/dio_client.dart';
 
@@ -13,6 +11,7 @@ class SportsScreen extends StatefulWidget {
 
 class _SportsScreenState extends State<SportsScreen> {
   final DioClient _client = DioClient();
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Newsmodel?>(

@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-Color kNewConceptColor = Color.fromRGBO(110, 44, 141, 1.0);
+Color kNewConceptColor = const Color.fromRGBO(110, 44, 141, 1.0);
 
 const MaterialColor kNewConceptColors = MaterialColor(
   _kNewConceptColors,

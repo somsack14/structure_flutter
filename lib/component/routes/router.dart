@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class AppRoutes {
   static const String mainScreen = 'mainScreen';
   static const String landing_view = 'landing_view';

@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:structure_flutter/component/models/newsmodel.dart';
 
 import '../../component/constants/colors.dart';
-import '../../component/models/data.dart';
-import '../../component/models/user.dart';
 import '../../component/serviecs/auth_serviecs/dio_client.dart';
 import '../widgets/create_user.dart';
-import '../widgets/fetch_user.dart';
 import '../widgets/update_user.dart';
 
 class GameScreen extends StatefulWidget {
@@ -47,7 +44,7 @@ class _GameScreenState extends State<GameScreen> {
                   ),
                 ),
               ),
-              const FetchUser(),
+              // const FetchUser(),
               const SizedBox(height: 30),
               const Padding(
                 padding: EdgeInsets.only(top: 16.0),
@@ -91,7 +88,7 @@ class _GameScreenState extends State<GameScreen> {
                               style: const TextStyle(fontSize: 16.0),
                             ),
                             Text(
-                              newsData![1].title.toString(),
+                              newsData[1].title.toString(),
                               style: const TextStyle(fontSize: 16.0),
                             ),
                           ],
@@ -100,7 +97,9 @@ class _GameScreenState extends State<GameScreen> {
                     }
                     return const Padding(
                       padding: EdgeInsets.symmetric(vertical: 40),
-                      child: CircularProgressIndicator(color: kTextPrimaryColor,),
+                      child: CircularProgressIndicator(
+                        color: kTextPrimaryColor,
+                      ),
                     );
                   },
                 ),

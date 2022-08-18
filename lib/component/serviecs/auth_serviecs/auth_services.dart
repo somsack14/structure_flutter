@@ -1,10 +1,7 @@
-import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:structure_flutter/component/utils/api_base.dart';
 import 'package:structure_flutter/component/utils/api_path.dart';
-
-import '../../models/auth_models/login_model.dart';
 
 class AuthServices {
   late Response response;

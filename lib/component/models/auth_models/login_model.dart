@@ -85,7 +85,7 @@ class Customer {
   int? get status => _status;
   String? get image => _image;
   String? get backgroundImage => _backgroundImage;
-  dynamic? get rememberToken => _rememberToken;
+  dynamic get rememberToken => _rememberToken;
   String? get deviceToken => _deviceToken;
   String? get createdAt => _createdAt;
   String? get updatedAt => _updatedAt;
@@ -98,13 +98,13 @@ class Customer {
       String? password,
       String? birthday,
       String? gender,
-      dynamic? drId,
-      dynamic? prId,
-      dynamic? village,
+      dynamic drId,
+      dynamic prId,
+      dynamic village,
       int? status,
       String? image,
       String? backgroundImage,
-      dynamic? rememberToken,
+      dynamic rememberToken,
       String? deviceToken,
       String? createdAt,
       String? updatedAt}) {

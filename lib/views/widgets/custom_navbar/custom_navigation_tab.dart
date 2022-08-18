@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:structure_flutter/component/constants/colors.dart';
-import 'package:structure_flutter/component/serviecs/auth_serviecs/login.dart';
 import 'package:structure_flutter/component/serviecs/auth_serviecs/sign_in.dart';
 import 'package:structure_flutter/views/screens/game.dart';
 import 'package:structure_flutter/views/screens/home/home_screens.dart';
@@ -16,11 +15,12 @@ class CustomNavigationBar extends StatefulWidget {
 
 class _CustomNavigationBarState extends State<CustomNavigationBar> {
   int _selectedDestination = 0;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    final _kTabPages = <Widget>[
+    final kTabPages = <Widget>[
       const HomeScreens(),
       const GameScreen(),
       const NewsScreen(),
@@ -29,7 +29,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
         color: Colors.blueGrey.shade50,
       ),
     ];
-    final _kTabs = <Tab>[
+    final kTabs = <Tab>[
       const Tab(text: 'Applications'),
       const Tab(text: 'Games'),
       const Tab(text: 'News'),
@@ -37,7 +37,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
       const Tab(text: 'Others'),
     ];
     return DefaultTabController(
-      length: _kTabs.length,
+      length: kTabs.length,
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -64,7 +64,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           // ],
           bottom: TabBar(
             isScrollable: true,
-            tabs: _kTabs,
+            tabs: kTabs,
             indicatorColor: kTextWhiteColor,
           ),
         ),
@@ -157,7 +157,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
           ),
         ),
         body: TabBarView(
-          children: _kTabPages,
+          children: kTabPages,
         ),
       ),
     );

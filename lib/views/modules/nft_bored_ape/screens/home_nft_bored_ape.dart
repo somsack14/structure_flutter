@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/blur_container.dart';
 import '../widgets/image_list_view.dart';
 
 class HomeNftBoredApe extends StatelessWidget {
@@ -62,7 +61,7 @@ class HomeNftBoredApe extends StatelessWidget {
             bottom: 60,
             left: 24,
             right: 24,
-            child: Container(
+            child: SizedBox(
               height: 170,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

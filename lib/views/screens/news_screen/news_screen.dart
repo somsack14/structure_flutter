@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:structure_flutter/component/models/appmodels.dart';
 import 'package:structure_flutter/component/models/newsmodel.dart';
-import 'package:structure_flutter/component/serviecs/auth_serviecs/new_service_api.dart';
 
 class NewsScreen extends StatefulWidget {
   const NewsScreen({super.key});

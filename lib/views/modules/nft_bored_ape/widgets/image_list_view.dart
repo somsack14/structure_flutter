@@ -38,13 +38,13 @@ class _ImageListViewState extends State<ImageListView> {
   }
 
   _autoScroll() {
-    final _currentScrollPosition = _scrollController.offset;
+    final currentScrollPosition = _scrollController.offset;
 
-    final _scrollEndPosition = _scrollController.position.maxScrollExtent;
+    final scrollEndPosition = _scrollController.position.maxScrollExtent;
 
     scheduleMicrotask(() {
       _scrollController.animateTo(
-        _currentScrollPosition == _scrollEndPosition ? 0 : _scrollEndPosition,
+        currentScrollPosition == scrollEndPosition ? 0 : scrollEndPosition,
         duration: Duration(seconds: widget.duration),
         curve: Curves.linear,
       );

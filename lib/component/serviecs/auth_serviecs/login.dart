@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:provider/provider.dart';
-import 'package:structure_flutter/component/models/appmodels.dart';
 import 'package:structure_flutter/component/models/newsmodel.dart';
 import 'package:structure_flutter/component/providers/auth_providers.dart';
 import 'package:structure_flutter/component/serviecs/auth_serviecs/auth_services.dart';
