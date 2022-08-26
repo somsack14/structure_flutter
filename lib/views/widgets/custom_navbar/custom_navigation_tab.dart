@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:structure_flutter/component/constants/colors.dart';
 import 'package:structure_flutter/views/screens/home/home_screens.dart';
+import 'package:structure_flutter/views/screens/top_up_success_animation.dart';
 
 class CustomNavigationBar extends StatefulWidget {
   const CustomNavigationBar({Key? key}) : super(key: key);
@@ -14,9 +15,7 @@ class _CustomNavigationBarState extends State<CustomNavigationBar> {
   Widget build(BuildContext context) {
     final _kTabPages = <Widget>[
       const HomeScreens(),
-      Container(
-        color: Colors.blueGrey.shade50,
-      ),
+      TopUpSuccessAnimationScreen(),
       Container(
         color: Colors.blueGrey.shade50,
       ),

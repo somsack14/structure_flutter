@@ -32,7 +32,7 @@ class _ImageListViewState extends State<ImageListView> {
     });
 
     //Add this to make sure that controller has been attacted to List View
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       _autoScroll();
     });
   }
@@ -54,7 +54,7 @@ class _ImageListViewState extends State<ImageListView> {
   @override
   Widget build(BuildContext context) {
     return Transform.rotate(
-      origin: const Offset(200 ,40),
+      origin: const Offset(200, 40),
       angle: 1.96 * pi,
       child: SizedBox(
         height: 130,
@@ -81,7 +81,7 @@ class _ImageListViewState extends State<ImageListView> {
                         _autoScroll();
                       }
                     });
-                    WidgetsBinding.instance?.addPostFrameCallback((_) {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
                       _autoScroll();
                     });
                   });

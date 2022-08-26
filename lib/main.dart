@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:structure_flutter/views/widgets/custom_navbar/custom_navigation_tab.dart';
+import 'package:structure_flutter/views/screens/top_up_point_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CustomNavigationBar(),
+      home: const TopUpPointScreen(),
     );
   }
 }

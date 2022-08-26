@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+
 Color kNewConceptColor = Color.fromRGBO(110, 44, 141, 1.0);
 
 const MaterialColor kNewConceptColors = MaterialColor(
@@ -18,7 +18,7 @@ const MaterialColor kNewConceptColors = MaterialColor(
   },
 );
 
-const int _kNewConceptColors = 0xFF6E2C8D ;
+const int _kNewConceptColors = 0xFF6E2C8D;
 
 const MaterialColor kPrimaryColor = MaterialColor(
   _kPrimaryColor,
@@ -35,7 +35,7 @@ const MaterialColor kPrimaryColor = MaterialColor(
     900: Color.fromRGBO(252, 206, 49, 1),
   },
 );
-const int _kPrimaryColor = 0xFFFECE07 ;
+const int _kPrimaryColor = 0xFFFECE07;
 
 // const MaterialColor kPrimaryColor = MaterialColor(
 const MaterialColor kSecondaryColor = MaterialColor(
@@ -68,7 +68,11 @@ const MaterialColor kSecondaryColor = MaterialColor(
 const int _kSecondaryColor = 0xFF0A673A;
 
 const kBack87 = Colors.black87;
+const kLightBlue = Color(0xFFf2f6ff);
+const kBackgroundColor = Color(0xFFf5f5f5);
+const kButtonColor = Color(0xFFFACF32);
 const kIconColor = Colors.white;
+const kAppBarColor = Color(0xFFFACF32);
 const kTextWhiteColor = Colors.white;
 const kTextBlackColor = Colors.black;
 const kTextSecondaryColor = Color(0xFF003f0f);
